@@ -4,9 +4,10 @@ import Header  from './components/Header';
 import Categories from './components/Categories';
 import Sort from './components/Sort';
 import PizzaBlock from './components/PizzaBlock';
-import dbPizza from './assets/db.json';
+import pizzas from './assets/db.json';
 
 function App() {
+  
   return (
     <div className="wrapper">
       <Header />
@@ -19,8 +20,8 @@ function App() {
             <h2 className="content__title">Все пиццы</h2>
             <div className="content__items">
               {
-                dbPizza.map(item => {
-                  return <PizzaBlock title={item.title} price={item.price}/> 
+                pizzas.map(item => {
+                  return <PizzaBlock key={item.id} title={item.title} price={item.price}/> 
                 })
               }   
             </div>

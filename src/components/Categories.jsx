@@ -12,7 +12,7 @@ import { useState } from "react";
             <ul>
                 {categories.map((item, index)=> {
                     return (
-                       <li onClick={() => activeCategories(index)}
+                       <li key={Math.random()} onClick={() => activeCategories(index)}
                         className={activeIndex === index ? 'active' : ''}>
                         {item}
                        </li> 
