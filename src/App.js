@@ -21,7 +21,13 @@ function App() {
             <div className="content__items">
               {
                 pizzas.map(item => {
-                  return <PizzaBlock key={item.id} title={item.title} price={item.price}/> 
+                  return <PizzaBlock
+                   key={item.id}
+                   title={item.title}
+                   price={item.price}
+                   imgUrl={item.imageUrl}
+                   size={item.sizes}
+                   type={item.types}/> 
                 })
               }   
             </div>
