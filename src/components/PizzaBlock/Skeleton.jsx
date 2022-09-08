@@ -3,7 +3,8 @@ import ContentLoader from 'react-content-loader';
 
 const Skeleton = (props) => {
     return (
-        <ContentLoader className="pizza-block"
+        <div className="pizza-block__wrapper">
+            <ContentLoader className="pizza-block"
             speed={2}
             width={280}
             height={460}
@@ -20,6 +21,8 @@ const Skeleton = (props) => {
             <rect x="0" y="279" rx="10" ry="10" width="260" height="24" /> 
             <rect x="0" y="319" rx="10" ry="10" width="258" height="49" />
         </ContentLoader>
+        </div>
+        
     )
 }
 

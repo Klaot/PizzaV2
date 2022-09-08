@@ -9,6 +9,14 @@
     align-items: center;
     justify-content: space-between;
   }
+  @media (max-width: 550px) {
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+  }
 
   &__logo {
     display: flex;
@@ -27,6 +35,16 @@
 
     p {
       color: #7b7b7b;
+    }
+  }
+
+  @media (max-width: 550px) {
+    &__logo {
+      justify-content: center;
+      align-items: center;
+      h1 {
+        margin-right: 40px;
+      }
     }
   }
 }

@@ -6,12 +6,13 @@ const PizzaBlock = ({ title, price, imgUrl, size, type}) => {
     const [ activeSize, setActiveSize ] = useState(0)
     const [ activeType, setActiveType ] = useState(0)
     const typePizza = ['тонкое', 'традиционное'];
-
+    
     const pizzaCountInc = () => {
         setPizzaCount(pizzaCount + 1)
     }
     return (
-        <div  className="pizza-block">
+        <div className="pizza-block__wrapper">
+          <div  className="pizza-block">
             <img
             className="pizza-block__image"
             src={imgUrl}
@@ -53,6 +54,7 @@ const PizzaBlock = ({ title, price, imgUrl, size, type}) => {
                 <i>{pizzaCount}</i>
             </button>
             </div>
+        </div>
         </div>
     )
 }
