@@ -12,6 +12,8 @@ const Home = () => {
     const [sortType, setSortType] = useState(0);
     const skeletonArray = [0,1,2,3,4,5];
 
+    console.log(sortType,categoryId);
+
     const onClickCategory = (id) => {
       setCategoryId(id)
     }
@@ -30,7 +32,7 @@ const Home = () => {
         <>
             <div className="content__top">
             <Categories value={categoryId} onClickCategory={(id) => onClickCategory(id)}/>
-            <Sort /> 
+            <Sort sort={sortType} onChangeSort={(id) => setSortType(id)} /> 
             </div>
             <h2 className="content__title">Все пиццы</h2>
             <div className="content__items">
