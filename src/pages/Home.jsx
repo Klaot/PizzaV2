@@ -18,7 +18,7 @@ const Home = () => {
 
      useEffect(() => {
       setIsLoading(true)
-      fetch(`https://limitless-tundra-86000.herokuapp.com/${categoryId === 0 ? '' : categoryId}`)
+      fetch(`https://limitless-tundra-86000.herokuapp.com/${categoryId}`)
      .then(response => response.json()).then(res => {
        setPizzaItem(res);
        setIsLoading(false);
@@ -48,7 +48,7 @@ const Home = () => {
               }  
             </div>
         </>
-    )
+      )
 }
 
 export default Home;
