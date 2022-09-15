@@ -12,21 +12,18 @@ const Home = () => {
     const [sortType, setSortType] = useState(0);
     const skeletonArray = [0,1,2,3,4,5];
 
-    console.log(sortType,categoryId);
-
     const onClickCategory = (id) => {
       setCategoryId(id)
     }
 
      useEffect(() => {
       setIsLoading(true)
-      fetch(`https://limitless-tundra-86000.herokuapp.com/${categoryId}`)
+      fetch(`https://limitless-tundra-86000.herokuapp.com/${categoryId}?${'sortType=' + sortType}`)
      .then(response => response.json()).then(res => {
        setPizzaItem(res);
        setIsLoading(false);
      })
-       window.scroll(0,0)
-     }, [categoryId]);
+     }, [categoryId, sortType]);
 
     return (
         <>
