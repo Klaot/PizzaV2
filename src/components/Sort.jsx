@@ -3,7 +3,6 @@ import { useState } from "react";
 const Sort = ({sort, onChangeSort}) => {
 
     const [isVisible, setVisible] = useState(false);
-    // const [popupItem, setPopupItem] = useState(0);
     const popupList = ['популярности', 'цене', 'алфавиту'];
     
 
