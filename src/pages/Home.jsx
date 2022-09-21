@@ -3,7 +3,7 @@ import Categories from '../components/Categories';
 import Sort from '../components/Sort';
 import PizzaBlock from '../components/PizzaBlock/PizzaBlock';
 import Skeleton from '../components/PizzaBlock/Skeleton';
-// https://limitless-tundra-86000.herokuapp.com
+//https://limitless-tundra-86000.herokuapp.com/
 const Home = ({searchValue}) => {
 
     const [pizzaItem, setPizzaItem] = useState([]);
@@ -18,7 +18,7 @@ const Home = ({searchValue}) => {
 
      useEffect(() => {
       setIsLoading(true)
-      fetch(`http://localhost:3001/${categoryId}?${'sortType=' + sortType}&${'search='+ searchValue.toLowerCase()}`)
+      fetch(`https://limitless-tundra-86000.herokuapp.com/${categoryId}?${'sortType=' + sortType}&${'search='+ searchValue.toLowerCase()}`)
      .then(response => response.json()).then(res => {
        setPizzaItem(res);
        setIsLoading(false);
