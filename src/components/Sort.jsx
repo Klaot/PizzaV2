@@ -1,13 +1,32 @@
-import { useState } from "react";
+import { useEffect } from "react";
+import { useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setSortId } from '../redux/slices/filter';
 
-const Sort = ({sort, onChangeSort}) => {
+
+const Sort = () => {
+
+    const dispatch = useDispatch();
+    const sortId = useSelector(state => state.filter.sortId)
+    const sortRef = useRef()
+
+    useEffect(() => {
+      const heandlerClickOutside = (e) => {
+        if (!e.path.includes(sortRef.current)) {
+          setVisible(false)
+        } 
+      }
+      document.body.addEventListener('click', heandlerClickOutside);
+      return () => {
+        document.body.removeEventListener('click', heandlerClickOutside)
+      }
+    }, [])
 
     const [isVisible, setVisible] = useState(false);
     const popupList = ['популярности', 'цене', 'алфавиту'];
     
-
     return (
-        <div className="sort">
+        <div ref={sortRef}  className="sort">
             <div className="sort__label">
               <svg
                 width="10"
@@ -22,7 +41,7 @@ const Sort = ({sort, onChangeSort}) => {
                 />
               </svg>
               <b>Сортировка по:</b>
-              <span onClick={() => setVisible(!isVisible)}>{popupList[sort]}</span>
+              <span onClick={() => setVisible(!isVisible)}>{popupList[sortId]}</span>
             </div>
             {isVisible && (
                 <div className="sort__popup">
@@ -31,11 +50,11 @@ const Sort = ({sort, onChangeSort}) => {
                       popupList.map((item,index) => {
                         return <li 
                               onClick={() => {
-                                onChangeSort(index);
+                                dispatch(setSortId(index));
                                 setVisible(!isVisible);
                               }} 
                               key={index} 
-                              className={sort === index ? 'active' : ''}>
+                              className={sortId === index ? 'active' : ''}>
                               {item}
                           </li>
                       })
