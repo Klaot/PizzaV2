@@ -24,7 +24,7 @@ const PizzaBlock = ({id, title, price, imgUrl, size, type}) => {
       dispatch(addItem(item))
     }
 
-    console.log(cartItem);
+   
 
     return (
         <div className="pizza-block__wrapper">
