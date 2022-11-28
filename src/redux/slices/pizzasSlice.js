@@ -3,9 +3,10 @@ import Axios from 'axios'
 
 export const fetchPizzas = createAsyncThunk(
     'pizza/fetchPizzasStatus', 
-      async (params) => {
+      async (params, thunkApi) => {
       const {categoryId, sortId, searchValue} = params
       const {data} = await Axios.get(`https://limitless-tundra-86000.herokuapp.com/${categoryId}?sortType=${sortId}&${'search='+ searchValue.toLowerCase()}`)
+      
       return data
     }
   )
