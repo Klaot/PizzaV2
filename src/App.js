@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import CartEmpty from './pages/Cart-Empty';
 import NotFound from './components/NotFound/404';
 import Cart from './pages/Cart.jsx';
+import PizzaInfo from "./components/PizzaInfo/PizzaInfo";
 
 function App() {
   
@@ -17,6 +18,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/cart-empy" element={<CartEmpty/>} />
                 <Route path="/cart" element={<Cart/>} />
+                <Route path="/pizzas/:id" element={<PizzaInfo/>} />
                 <Route path="*" element={<NotFound/>} />
               </Routes>
             </div>

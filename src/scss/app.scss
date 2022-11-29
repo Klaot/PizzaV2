@@ -355,3 +355,20 @@ body {
     }
   }
 }
+
+.pizza_info {
+  display: flex;
+  justify-content: space-between;
+  img {
+    width: 270px;
+  }
+  h1 {
+    margin-bottom: 20px;
+  }
+  h3 {
+    margin-top: 20px;
+  }
+  .pizza_info__text {
+    max-width: 500px;
+  }
+}

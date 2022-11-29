@@ -7,6 +7,7 @@ import Sort from '../components/Sort';
 import PizzaBlock from '../components/PizzaBlock/PizzaBlock';
 import Skeleton from '../components/PizzaBlock/Skeleton';
 
+
 //https://limitless-tundra-86000.herokuapp.com/
 
 
@@ -24,7 +25,7 @@ const Home = () => {
 
     const skeletons = skeletonArray.map((item, index) => <Skeleton key={index}/>)
     const pizzas =  items.map(item => {
-          return <PizzaBlock id = {item.id} key={item.id} title={item.title} price={item.price} imgUrl={item.imageUrl} size={item.sizes} type={item.types}/> })
+          return <PizzaBlock id = {item.id} key={item.id} title={item.title} price={item.price} imgUrl={item.imageUrl} size={item.sizes} type={item.types}/>})
     
     return (
       <>
