@@ -1,12 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import Axios from 'axios'
 // https://limitless-tundra-86000.herokuapp.com
+
 export const fetchPizzas = createAsyncThunk(
     'pizza/fetchPizzasStatus', 
       async (params, thunkApi) => {
       const {categoryId, sortId, searchValue} = params
-      const {data} = await Axios.get(`https://limitless-tundra-86000.herokuapp.com/${categoryId}?sortType=${sortId}&${'search='+ searchValue.toLowerCase()}`)
-      
+      const {data} = await Axios.get(`https://klaot-pizza.herokuapp.com/${categoryId}?sortType=${sortId}&${'search='+ searchValue.toLowerCase()}`)
       return data
     }
   )
