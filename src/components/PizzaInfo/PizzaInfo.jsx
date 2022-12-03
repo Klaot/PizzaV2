@@ -12,7 +12,7 @@ function PizzaInfo() {
    useEffect(() => {
     async function fetchPizza() {
        try {
-        axios.get('https://klaot-pizza.herokuapp.com/pizzas/' + id).then(res => setPizza(res.data))
+        axios.get('https://kind-blue-chick-garb.cyclic.app/pizzas/' + id).then(res => setPizza(res.data))
        } catch {
         alert('Error loading')
         navigate('/')
